@@ -7,6 +7,7 @@ import { Button } from '../Button';
 function Generator() {
   // let uuid = uuidv4();
   const [id, setId] = useState(uuidv4()); // -> [0, 1]
+  // const [value, setValue] = useState(1_000); // -> [0, 1]
 
   const handleClick = (event) => {
     // console.log('Event: ', event);
@@ -18,6 +19,8 @@ function Generator() {
     <>
       <Text>Your UUID is: {id}</Text>
       <Button label="Refresh" onClick={handleClick} />
+      {/* <Button label="Refresh" onClick={() => handleClick()} /> */}
+      {/* <Button label="Refresh" setId={setId} /> */}
     </>
   );
 }
