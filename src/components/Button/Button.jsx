@@ -1,6 +1,8 @@
 // import React from 'react';
 
 // { label: 'Click me', color: 'red', bgColor: 'blue' }
+
+// function Button({ label, color, bgColor }){
 function Button(props) {
   // props.color
   // props.bgColor
@@ -16,6 +18,10 @@ function Button(props) {
   const buttonStyle = {
     color, // color: color,
     backgroundColor: bgColor,
+  }
+
+  if (!label) {
+    return null;
   }
 
   return (

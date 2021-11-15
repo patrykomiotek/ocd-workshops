@@ -14,7 +14,7 @@ function App() {
         <Text>
           Edit <code>{path}</code> and save to reload.
         </Text>
-        <Button label="Click me" bgColor="blue" />
+        <Button bgColor="blue" />
         <Text fontSize="10" color="blue">
           Para 2 (with props)
         </Text>
