@@ -17,7 +17,9 @@ function Generator() {
 
   return (
     <>
+      <Text>Hello</Text>
       <Text>Your UUID is: {id}</Text>
+      <Text>I'm React!</Text>
       <Button label="Refresh" onClick={handleClick} />
       {/* <Button label="Refresh" onClick={() => handleClick()} /> */}
       {/* <Button label="Refresh" setId={setId} /> */}
