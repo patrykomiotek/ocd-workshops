@@ -1,22 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+// import Text from './Text'; (only for default exports)
+// import { Text } from './Text';
+import { Text as TextGh, age } from './Text';
 
+// JSX -> JS -> keyword class
+// class App extends React.Component
 function App() {
+  const path = "src/**/App.js";
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <TextGh>
+          Edit <code>{path}</code> and save to reload {age}.
+        </TextGh>
+        <TextGh>
+          Para 2
+        </TextGh>
+        <TextGh>
+          Para 3
+        </TextGh>
       </header>
     </div>
   );
