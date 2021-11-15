@@ -13,8 +13,8 @@ function App() {
         <TextGh>
           Edit <code>{path}</code> and save to reload {age}.
         </TextGh>
-        <TextGh>
-          Para 2
+        <TextGh fontSize="10" color="blue">
+          Para 2 (with props)
         </TextGh>
         <TextGh>
           Para 3
