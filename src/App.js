@@ -2,6 +2,7 @@ import './App.css';
 // import Text from './Text'; (only for default exports)
 // import { Text } from './Text';
 import { Text } from './components/Text';
+import { Button } from './components/Button';
 
 // JSX -> JS -> keyword class
 // class App extends React.Component
@@ -13,6 +14,7 @@ function App() {
         <Text>
           Edit <code>{path}</code> and save to reload.
         </Text>
+        <Button label="Click me" bgColor="blue" />
         <Text fontSize="10" color="blue">
           Para 2 (with props)
         </Text>

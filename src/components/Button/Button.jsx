@@ -4,16 +4,29 @@
 function Button(props) {
   // props.color
   // props.bgColor
+
+  // standard
+  // const label = props.label;
+  // const color = props.color;
+  // const bgColor = props.bgColor;
+
+  // ES way with destructing
+  const { label, color, bgColor } = props;
+
   const buttonStyle = {
-    color: props.color,
-    backgroundColor: props.bgColor,
+    color, // color: color,
+    backgroundColor: bgColor,
   }
 
   return (
     <button style={buttonStyle}>
-      {props.label}
+      {label}
     </button>
   );
+}
+
+Button.defaultProps = {
+  color: "green",
 }
 
 export { Button };
