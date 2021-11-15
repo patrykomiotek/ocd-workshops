@@ -13,7 +13,7 @@ function Button(props) {
   // const bgColor = props.bgColor;
 
   // ES way with destructing
-  const { label, color, bgColor } = props;
+  const { label, color, bgColor, onClick } = props;
 
   const buttonStyle = {
     color, // color: color,
@@ -24,8 +24,9 @@ function Button(props) {
     return null;
   }
 
+  // process.env.REACT_APP_API_BASE_URL
   return (
-    <button style={buttonStyle}>
+    <button style={buttonStyle} onClick={onClick}>
       {label}
     </button>
   );

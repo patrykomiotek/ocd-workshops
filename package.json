@@ -47,6 +47,9 @@
       "last 1 safari version"
     ]
   },
+  "optionalDependencies": {
+    "babel-loader": "8.1.0"
+  },
   "devDependencies": {
     "@storybook/addon-actions": "^6.3.12",
     "@storybook/addon-essentials": "^6.3.12",
