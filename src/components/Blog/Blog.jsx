@@ -6,17 +6,20 @@ const posts = [
    }
  ];
 
+// const func = () => ({ a: 5 })
+// const func = () => { 
+//   return { a: 5 };
+// };
+
 function Blog() {
   return (
     <div>
-      {posts.map((elem) => {
-        return (
-          <div key={elem.id}>
-            <h2>{elem.title}</h2>
-            <p>{elem.intro}</p>
-          </div>
-        );
-      })}
+      {posts.map((elem) => (
+        <div key={elem.id}>
+          <h2>{elem.title}</h2>
+          <p>{elem.intro}</p>
+        </div>
+      ))}
     </div>
   );
 }
