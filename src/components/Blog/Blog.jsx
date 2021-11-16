@@ -11,11 +11,11 @@ const posts = [
 //   return { a: 5 };
 // };
 function BlogTile(props) {
-  const { post } = props;
+  const { alamaMaKota } = props;
   return (
     <div>
-      <h2>{post.title}</h2>
-      <p>{post.intro}</p>
+      <h2>{alamaMaKota.title}</h2>
+      <p>{alamaMaKota.intro}</p>
     </div>
   );
 }
@@ -25,10 +25,10 @@ function Blog() {
     <div>
       <h1>My awesome blog</h1>
       <hr />
-      <BlogTile post={{ title: "Lorem", intro: "Ipsum" }} />
+      <BlogTile alamaMaKota={{ title: "Lorem", intro: "Ipsum" }} />
       <hr />
       {posts.map((elem) => (
-        <BlogTile key={elem.id} post={elem} />
+        <BlogTile key={elem.id} alamaMaKota={elem} />
       ))}
     </div>
   );
