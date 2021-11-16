@@ -4,12 +4,13 @@ import './index.css';
 // import App from './App';
 // import { Text } from './Text';
 // import { CounterFunc, CounterClass } from './components/Counter';
-import { RegistrationForm } from './components/RegistrationForm';
+// import { RegistrationForm } from './components/RegistrationForm';
+import { Blog } from './components/Blog';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <div>
-    <RegistrationForm />
+    <Blog />
   </div>,
   // <React.StrictMode>
   //   <App />
