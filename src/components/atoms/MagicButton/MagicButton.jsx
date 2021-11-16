@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 
 const MagicButton = forwardRef((props, ref) => {
-  const { children, color, bgColor, onClick } = props;
+  const { children, color, bgColor, onClick, onMouseEnter, onMouseLeave } = props;
 
   const buttonStyle = {
     color, // color: color,
@@ -9,14 +9,19 @@ const MagicButton = forwardRef((props, ref) => {
   }
 
   return (
-    <button ref={ref} style={buttonStyle} onClick={onClick}>
+    <button
+      ref={ref}
+      style={buttonStyle}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      onClick={onClick}>
       {children}
     </button>
   );
 })
 
 MagicButton.defaultProps = {
-  color: "red",
+  color: "black",
 }
 
 export { MagicButton };

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-import { Text } from '../Text';
-import { Button } from '../Button';
+import { Text } from 'components/atoms/Text';
+import { Button } from 'components/atoms/Button';
 
 function Generator() {
   // let uuid = uuidv4();
