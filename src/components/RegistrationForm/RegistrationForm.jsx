@@ -154,10 +154,10 @@ function RegistrationForm() {
         <hr />
       </div>
       <div>
-        <Input ref={surnameRef} />
+        <Input label="Surname" ref={surnameRef} />
       </div>
       <div>
-        <Input ref={ageRef} />
+        <Input label="Age" ref={ageRef} />
       </div>
       <div>
         <MagicButton ref={buttonRef}>Click me!</MagicButton>
