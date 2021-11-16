@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Text } from '../Text';
 import { MagicButton } from '../MagicButton';
+import { Input } from '../Input';
 
 function RegistrationForm() {
   const [isValid, setIsValid] = useState(false);
@@ -11,6 +12,8 @@ function RegistrationForm() {
   const [errors, setErrors] = useState({});
   const nameInputRef = useRef(null); // nameInputRef.current === null
   const buttonRef = useRef(null);
+  const surnameRef = useRef(null);
+  const ageRef = useRef(null);
   // const [emailError, setEmailError] = useState(false)
   // {}, { email: "Email is invalid "}, { email: "Email is invalid", password: ""}
 
@@ -29,6 +32,11 @@ function RegistrationForm() {
 
     if (buttonRef.current) {
       buttonRef.current.style.backgroundColor = 'blue';
+    }
+
+    if (surnameRef.current && ageRef.current) {
+      surnameRef.current.value = "Kowalski";
+      ageRef.current.value = "65";
     }
   }, []);
 
@@ -143,6 +151,13 @@ function RegistrationForm() {
       </div>
       <div>
         <input type="submit" />
+        <hr />
+      </div>
+      <div>
+        <Input ref={surnameRef} />
+      </div>
+      <div>
+        <Input ref={ageRef} />
       </div>
       <div>
         <MagicButton ref={buttonRef}>Click me!</MagicButton>
