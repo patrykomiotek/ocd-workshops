@@ -25,6 +25,8 @@ function Blog() {
     <div>
       <h1>My awesome blog</h1>
       <hr />
+      <BlogTile post={{ title: "Lorem", intro: "Ipsum" }} />
+      <hr />
       {posts.map((elem) => (
         <BlogTile key={elem.id} post={elem} />
       ))}
