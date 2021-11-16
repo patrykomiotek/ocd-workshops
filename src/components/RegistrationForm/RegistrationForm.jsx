@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Text } from '../Text';
+import { MagicButton } from '../MagicButton';
 
 function RegistrationForm() {
   const [isValid, setIsValid] = useState(false);
@@ -137,6 +138,9 @@ function RegistrationForm() {
       </div>
       <div>
         <input type="submit" />
+      </div>
+      <div>
+        <MagicButton>Click me!</MagicButton>
       </div>
     </form>
   );
