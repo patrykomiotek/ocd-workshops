@@ -1,13 +1,38 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Text } from '../Text';
 
 function RegistrationForm() {
+  const [isValid, setIsValid] = useState(false);
+  const [isValidInfo, setIsValidInfo] = useState("");
   const [state, setState] = useState({
     email: "",
     password: "",
   });
+
+  // useEffect(() => {
+  //   if (isValid === false) {
+  //     //
+  //   } else if (isValidInfo === "Invalid") {
+  //     //
+  //   }
+  // }, [isValid, isValidInfo]);
+
+  useEffect(() => {
+    console.log("I am here isValid");
+  }, [isValid]);
+
+  useEffect(() => {
+    console.log("I am here isValidInfo");
+  }, [isValidInfo]);
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    const { email, password } = state;
+    if (email && password) {
+      setIsValid(true);
+    } else {
+      setIsValid(false);
+    }
     // console.dir(event.target[0].value);
     // console.dir(event.target["email"].value); // document.getElementById("email");
     // console.log(event.target);
