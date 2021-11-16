@@ -10,15 +10,23 @@ const posts = [
 // const func = () => { 
 //   return { a: 5 };
 // };
+function BlogTile(props) {
+  const { post } = props;
+  return (
+    <div>
+      <h2>{post.title}</h2>
+      <p>{post.intro}</p>
+    </div>
+  );
+}
 
 function Blog() {
   return (
     <div>
+      <h1>My awesome blog</h1>
+      <hr />
       {posts.map((elem) => (
-        <div key={elem.id}>
-          <h2>{elem.title}</h2>
-          <p>{elem.intro}</p>
-        </div>
+        <BlogTile key={elem.id} post={elem} />
       ))}
     </div>
   );
