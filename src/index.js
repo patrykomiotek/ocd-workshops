@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
 // import { Text } from './Text';
+import { CounterFunc, CounterClass } from './components/Counter';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <div>
+    <CounterClass />
+    <CounterFunc />
+  </div>,
+  // <React.StrictMode>
+  //   <App />
+  // </React.StrictMode>,
   // <Text>Hello!!!</Text>,
   document.getElementById('root')
 );
