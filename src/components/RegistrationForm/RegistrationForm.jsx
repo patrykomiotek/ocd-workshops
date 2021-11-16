@@ -1,19 +1,30 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Text } from '../Text';
 
 function RegistrationForm() {
   const [isValid, setIsValid] = useState(false);
   const [state, setState] = useState({
-    email: "",
+    email: "patryk@dot.com",
     password: "",
   });
   const [errors, setErrors] = useState({});
+  const nameInputRef = useRef(null); // nameInputRef.current === null
   // const [emailError, setEmailError] = useState(false)
   // {}, { email: "Email is invalid "}, { email: "Email is invalid", password: ""}
 
   useEffect(() => {
-    console.log("I am here isValid");
-  }, [isValid]);
+    if (nameInputRef.current) {
+      setTimeout(() => {
+        nameInputRef.current.focus();
+
+        // 
+        nameInputRef.current.style.borderColor = "#ff0000";
+        // nameInputRef.current.style.backgroundColor = "#ff00ee";
+
+        // nameInputRef.current.value
+      }, 2000);
+    }
+  }, []);
 
   useEffect(() => {
     if (!state.email.includes("@")) {
@@ -79,7 +90,7 @@ function RegistrationForm() {
     //   email: event.target.value,
     // });
     const name = event.target.name; // name="email", name="password"
-    const value = event.target.value;
+    const value = event.target.value; // checkbox: event.target.checked
     console.log("name: ", name);
     setState({
       ...state,
@@ -95,15 +106,33 @@ function RegistrationForm() {
       <Text>My awesome form</Text>
       <Text>Your email is: {email}</Text>
       <div>
+        <label htmlFor="name">Your name:</label>
+        <input ref={nameInputRef} defaultValue="enter text here" type="text" name="name" />
+        <hr />
+      </div>
+      <div>
         <label htmlFor="email">E-mail: </label>
-        <input id="email" name="email" type="text" onChange={handleChange} />
+        <input
+          id="email"
+          name="email"
+          type="text"
+          value={state.email}
+          onChange={handleChange}
+        />
         {/* {errors.email ? errors.email : null} */}
         {errors.email && <Text color="red">{errors.email}</Text>}
         {/* <input id="email" name="email" type="email" /> */}
+        <hr />
       </div>
       <div>
         <label htmlFor="password">Password: </label>
-        <input id="password" name="password" type="password" onChange={handleChange} />
+        <input
+          id="password"
+          name="password"
+          type="password"
+          value={state.password}
+          onChange={handleChange}
+        />
         {errors.password && <Text color="red">{errors.password}</Text>}
       </div>
       <div>
