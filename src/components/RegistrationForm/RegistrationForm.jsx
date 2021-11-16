@@ -10,6 +10,7 @@ function RegistrationForm() {
   });
   const [errors, setErrors] = useState({});
   const nameInputRef = useRef(null); // nameInputRef.current === null
+  const buttonRef = useRef(null);
   // const [emailError, setEmailError] = useState(false)
   // {}, { email: "Email is invalid "}, { email: "Email is invalid", password: ""}
 
@@ -24,6 +25,10 @@ function RegistrationForm() {
 
         // nameInputRef.current.value
       }, 2000);
+    }
+
+    if (buttonRef.current) {
+      buttonRef.current.style.backgroundColor = 'blue';
     }
   }, []);
 
@@ -140,7 +145,7 @@ function RegistrationForm() {
         <input type="submit" />
       </div>
       <div>
-        <MagicButton>Click me!</MagicButton>
+        <MagicButton ref={buttonRef}>Click me!</MagicButton>
       </div>
     </form>
   );

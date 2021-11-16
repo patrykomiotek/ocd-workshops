@@ -1,14 +1,7 @@
-import { useEffect, useRef } from 'react';
+import { forwardRef } from 'react';
 
-function MagicButton(props) {
-  const buttonRef = useRef(null);
+const MagicButton = forwardRef((props, ref) => {
   const { children, color, bgColor, onClick } = props;
-
-  useEffect(() => {
-    if (buttonRef.current) {
-      buttonRef.current.style.backgroundColor = 'blue';
-    }
-  }, []);
 
   const buttonStyle = {
     color, // color: color,
@@ -16,11 +9,11 @@ function MagicButton(props) {
   }
 
   return (
-    <button ref={buttonRef} style={buttonStyle} onClick={onClick}>
+    <button ref={ref} style={buttonStyle} onClick={onClick}>
       {children}
     </button>
   );
-}
+})
 
 MagicButton.defaultProps = {
   color: "red",
