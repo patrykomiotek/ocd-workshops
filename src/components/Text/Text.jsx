@@ -3,9 +3,26 @@
 
 function Text(props) {
   // console.log('Text props: ', props);
+  const { color, children } = props;
+
+  const styles = {
+    container: {
+      backgroundColor: '#fff'
+    },
+    para: {
+      color,
+    }
+  };
+
   return (
-    <p>{props.children}</p>
+    <div style={styles.container}>
+      <p style={styles.para}>{children}</p>
+    </div>
   );
+}
+
+Text.defaultProps = {
+  color: "#000",
 }
 
 export { Text };
