@@ -25,3 +25,10 @@ BlueButton.args = {
   color: 'white',
   children: 'Blue button',
 };
+
+export const GreenButton = Template.bind({});
+GreenButton.args = {
+  bgColor: 'green',
+  color: 'white',
+  children: 'Green button',
+};

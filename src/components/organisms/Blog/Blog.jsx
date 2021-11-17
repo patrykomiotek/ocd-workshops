@@ -1,10 +1,12 @@
-const posts = [
-  { id: 1, title: 'Pilne: Co to był za dzień!', intro: 'Tego świat jeszcze nie widział'},
-  { id: 2, title: 'Wszyscy zazdroszą Polakom!', intro: 'Takiego clickbajtowego tytułu jeszcze nikt nie wymyślił'},
-  { id: 3, title: 'Adam Małysz Zgolił wąs',
-     intro: 'Po przegranym zakładzie z Piotrem Żyłą nasz mistrz olimpijski zgolił wąsy'
-   }
- ];
+import { useState, useEffect } from 'react';
+
+// const posts = [
+//   { id: 1, title: 'Pilne: Co to był za dzień!', intro: 'Tego świat jeszcze nie widział'},
+//   { id: 2, title: 'Wszyscy zazdroszą Polakom!', intro: 'Takiego clickbajtowego tytułu jeszcze nikt nie wymyślił'},
+//   { id: 3, title: 'Adam Małysz Zgolił wąs',
+//      intro: 'Po przegranym zakładzie z Piotrem Żyłą nasz mistrz olimpijski zgolił wąsy'
+//    }
+//  ];
 
 // const func = () => ({ a: 5 })
 // const func = () => { 
@@ -21,14 +23,22 @@ function BlogTile(props) {
 }
 
 function Blog() {
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    fetch("https://api.airtable.com/v0/appqZMgZSoWjM7Lgs/posts?view=default", {
+      headers: {
+        Authorization: "Bearer key7v1yhHtBnsJkfD"
+      }
+    })
+    .then(response => response.json())
+    .then(data => setPosts(data.records));
+  }, []);
   return (
     <div>
       <h1>My awesome blog</h1>
       <hr />
-      <BlogTile alamaMaKota={{ title: "Lorem", intro: "Ipsum" }} />
-      <hr />
       {posts.map((elem) => (
-        <BlogTile key={elem.id} alamaMaKota={elem} />
+        <BlogTile key={elem.id} alamaMaKota={elem.fields} />
       ))}
     </div>
   );
