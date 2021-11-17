@@ -1,33 +1,20 @@
 import './App.css';
-// import Text from './Text'; (only for default exports)
-// import { Text } from './Text';
-import { Text } from './components/Text';
-import { Button } from './components/Button';
-import { Generator } from './components/Generator';
+import { ErrorBoundary } from 'ErrorBoundary';
+import { Blog } from './components/organisms/Blog';
+
 
 // JSX -> JS -> keyword class
 // class App extends React.Component
 function App() {
   // const path = "src/**/App.js";
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <Text>
-          Edit <code>{path}</code> and save to reload.
-        </Text> */}
-        <Generator />
-        {/* <Button label="Click me!" bgColor="blue" /> */}
-        {/* <Text
-          fontSize="10"
-          color="blue"
-        >
-          Para 2 (with props)
-        </Text> */}
-        {/* <Text>
-          Para 3
-        </Text> */}
-      </header>
-    </div>
+    <ErrorBoundary>
+      <div className="App">
+        <header className="App-header">
+          <Blog />
+        </header>
+      </div>
+    </ErrorBoundary>
   );
 }
 

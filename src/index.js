@@ -1,21 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';
-// import { Text } from './Text';
-// import { CounterFunc, CounterClass } from './components/Counter';
-// import { RegistrationForm } from './components/organisms/RegistrationForm';
-import { Blog } from './components/organisms/Blog';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <div>
-    <Blog />
-  </div>,
-  // <React.StrictMode>
-  //   <App />
-  // </React.StrictMode>,
-  // <Text>Hello!!!</Text>,
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
