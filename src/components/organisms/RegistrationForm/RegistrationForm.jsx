@@ -148,12 +148,12 @@ function RegistrationForm() {
         <input type="submit" />
         <hr />
       </div>
-      <div>
+      {/* <div>
         <Input label="Surname" ref={surnameRef} />
       </div>
       <div>
         <Input label="Age" ref={ageRef} />
-      </div>
+      </div> */}
     </form>
   );
 }
