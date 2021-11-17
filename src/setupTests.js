@@ -19,4 +19,4 @@ afterEach(() => {
 afterAll(() => {
   // Clean up once the tests are done.
   server.close()
-})
+});
