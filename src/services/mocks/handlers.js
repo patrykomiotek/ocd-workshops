@@ -51,4 +51,16 @@ export const handlers = [
       }),
     );
   }),
+
+  rest.get('/tickets', (req, res, ctx) => {
+    return res(
+      ctx.json(
+        [
+          {id: 1, title: 'Nie działa drukarka', description: 'Lorem ipsum....'},
+          {id: 2, title: 'Nie działa drukarka', description: 'Lorem ipsum....'},
+          {id: 3, title: 'Nie działa drukarka', description: 'Lorem ipsum....'},
+        ]
+      )
+    );
+  })
 ]
