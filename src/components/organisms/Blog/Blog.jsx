@@ -26,7 +26,7 @@ function BlogTile(props) {
 function Blog() {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState("")
-  
+
   // Method 1
   // useEffect(() => {
   //   fetch("https://api.airtable.com/v0/appqZMgZSoWjM7Lgs/posts?view=default", {
