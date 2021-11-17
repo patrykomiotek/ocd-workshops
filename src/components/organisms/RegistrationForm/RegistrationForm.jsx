@@ -77,6 +77,7 @@ function RegistrationForm() {
     }
   }, [state.password]);
 
+  // TODO: this can be moved to parent component
   const handleSubmit = (event) => {
     event.preventDefault();
     const { email, password } = state;
