@@ -5,7 +5,7 @@ import { Input } from 'components/atoms/Input';
 function RegistrationForm() {
   const [isValid, setIsValid] = useState(false);
   const [state, setState] = useState({
-    email: "patryk@dot.com",
+    email: "",
     password: "",
   });
   const [errors, setErrors] = useState({});
