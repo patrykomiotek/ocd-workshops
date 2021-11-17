@@ -32,6 +32,19 @@ DefaultStory.parameters = {
 
 DefaultStory.storyName = 'Default';
 
+export const ErrorStory = Template.bind({});
+ErrorStory.parameters = {
+  msw: [
+    rest.get(apiConfig.postsList, (req, res, ctx) => {
+      return res(
+        ctx.status(404),
+        ctx.json({ records: []})
+      )
+    }),
+  ],
+}
+
+
 export default {
   title: 'Organisms/Blog',
   component: DefaultStory,
